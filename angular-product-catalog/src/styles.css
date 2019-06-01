@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  border-bottom: 1px solid #ddd;
+}
+body {
+  margin: 2em;
+}
+body, input[type="text"], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+.catalog {
+  display: flex; 
+  flex-wrap: wrap; 
+  padding: 5px;
+}
+.card {
+	border: 1px solid #ddd !important;
+  padding: 0px;
+  display: inline-block;
+  margin: 5px;
+}
+.cardsize {
+  width: 17rem;
+}
+.card-title {
+  background: #369;
+  color: white;
+  margin: 0px;
+  padding:5px;
+  text-align: left;
+}
+.card-subtitle {
+  text-align: left;
+  padding-left: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.card-text {
+  text-align: left;
+  padding-left: 5px;
+  font-size: 14px;
+}
+.propertyname {
+  font-weight: bold;
+}
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}

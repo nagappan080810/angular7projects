@@ -1,0 +1,30 @@
+<div>
+	<input [(ngModel)]="searchText" placeholder="product name"/>
+	<button class="btn btn-primary" type="button" (click)="onSearch(searchText)">Search Product</button>
+	<button class="btn btn-primary" type="button" (click)="onAdd(product)">Add Product</button>
+</div>
+<div class="catalog">
+<div class="card cardsize clickable"  *ngFor="let product of products" (click)="onSelect(product)">
+	<div *ngIf="selectedProduct==product">
+	  <h2 class="card-title">Create/Edit Product<button class="delete" (click)="onDelete(product)">X</button></h2>
+	  <form  (ngSubmit)="onSubmit(product)">
+	  	<label>Name:</label><input [(ngModel)]="selectedProduct.name" name="productName" placeholder="product name"/>
+		 <br/>
+		  <div style="width: 7rem;">
+		<label>Qty:</label><input [(ngModel)]="selectedProduct.qty" name="productQty" style="width:3rem;" type="number" placeholder="product qty"/>
+		  </div>
+		<label>Brand:</label><input [(ngModel)]="selectedProduct.brand" name="productBrand" placeholder="product brand"/>
+			<br/>
+		  <label>Desc:</label><input [(ngModel)]="selectedProduct.desc" name="productDesc" placeholder="product desc"/><br/>
+		<input style="float:right; width: 5rem;"  type="submit" value="Save" />
+	  </form>
+	</div>
+	<div *ngIf="selectedProduct!=product" class="card-body">
+		<h2 class="card-title">{{product.name | titlecase}}<button class="delete" (click)="onDelete(product)">X</button></h2>
+		<p class="card-subtitle">Product Details</p>
+		<p class="card-text"><span class="propertyname">Id:</span>{{product.id}}</p>
+		<p class="card-text"><span class="propertyname">Qty:</span>{{product.qty}}</p>
+		<p class="card-text"><span class="propertyname">Desc:</span>{{product.desc}}</p>
+	</div>
+</div>
+</div>

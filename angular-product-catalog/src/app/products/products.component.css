@@ -1,0 +1,19 @@
+.clickable {
+	cursor: pointer;
+}
+.delete {
+	float: right;
+	color: #369;
+	font-weight: bold;
+	cursor: pointer;
+}
+label {
+	display: inline-block;
+	padding-bottom: 5px;
+	width: 3rem;
+	text-align:right;
+}
+input {
+    width: 13rem;
+    display: inline-block;
+}
