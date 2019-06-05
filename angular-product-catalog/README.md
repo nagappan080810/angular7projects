@@ -1,5 +1,5 @@
 # ProductCatalog
-
+This is to display all the products as dashboard view. User can add/edit/delete the product details. It has used formsmodule and browsermodule integrated to it.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
