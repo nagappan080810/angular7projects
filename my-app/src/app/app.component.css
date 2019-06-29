@@ -1,0 +1,59 @@
+h1 {
+	color: #369;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 250%;
+}
+
+.header {
+    text-align:center;
+    background-color:#8b5a2b;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+}
+
+.whitetext {
+    color: white;
+}
+
+.newsbody {
+    position: relative;
+    top: 150px;
+}
+
+.newsitem {
+    background-color:lightgrey;
+    border-radius: 5px;
+    list-style-type: none;
+    background-color: #f6e5d6;
+    width: 80%;
+    padding: 20px;
+    margin: 5px; margin-left: 120px;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.warningtext {
+    color: red;
+}
+
+.sourcetext {
+    float: right;
+    font-size: 14px;
+    font-weight: 200;
+    color: grey;
+}
+
+.newsheading {
+    font-weight:bold;
+    font-size: 16px;
+}
+
+.newsduration {
+    float:right;
+    font-size:12px;
+    font-weight: normal;
+}

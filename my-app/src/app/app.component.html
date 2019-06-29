@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+  <h1 class="whitetext">
+    Breaking News
+  </h1>
+</div>
+<div class="newsbody">
+  <div *ngIf="isLoading">
+    <h3 style="text-align: center;">Loading latest news.. </h3>
+  </div>
+  <div *ngIf="isCachedData">
+    <p class="centertext warningtext">Showing cached data as not able to connect to the network</p>
+  </div>
+  <div *ngIf="!isLoading">
+  <ul>
+    <li class="newsitem"
+        *ngFor="let news of newslist">
+      <p class="newsheading">
+        {{news.MainTitle}}
+        <span class="newsduration">{{news.Duration}}</span>
+      </p>
+      <label class="sourcetext">Source: {{news.SourceName}}</label>
+      <br/>
+    </li>
+  </ul>
+  </div>
+</div>
