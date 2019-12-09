@@ -18,6 +18,7 @@ h1 {
 }
 
 .newsbody {
+    z-index:-1;
     position: relative;
     top: 150px;
 }

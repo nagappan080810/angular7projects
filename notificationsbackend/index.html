@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications Backend Portal Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+        $.ajaxSetup({
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+        $('#btn1').on('click', function() {
+            console.log("set recurring notifications");
+            $.post('/startRecurringNotifications', function(data){
+                console.log("successfully set the data");
+                console.log(data);
+            });
+        });
+
+        $('#btn2').on('click', function() {
+            console.log("stop recurring notifications");
+            $.post('/stopRecurringNotifications', function(data){
+                console.log("stop recurring notifications ");
+                console.log(data);
+            });
+        });
+        $('#sendMessage').on('click', function() {
+            console.log("send message");
+
+            var reqBody = {};
+            reqBody.title = $('#msgTitle').val();
+            reqBody.body = $('#msgData').val();
+            var bodyJson= JSON.stringify(reqBody);
+
+            $.ajax({
+              type: "POST",
+              dataType: 'application/json',
+              url: 'sendNotification',
+              data: bodyJson,
+            });
+        });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <h2>Recurring Notifications for every 10 seconds</h2>
+    <button id="btn1" style="display: inline-block;">Start Notifications</button>
+    <button id="btn2" style="display: inline-block;">Stop Notifications</button>
+</div>
+<div>
+
+    <h2>Send customized message to user</h2>
+    <input type="textbox" id="msgTitle" placeholder="Enter the message title"></input><br/><br/>
+    <textarea id="msgData" rows="2" cols="50" placeholder="Enter the message data"></textarea>
+    <button id="sendMessage" style="display:block;">Send</button>
+</div>
+</body>
+</html>

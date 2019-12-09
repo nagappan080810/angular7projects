@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+  <div
+          style="width: 60%; background-color: cadetblue; color: white; margin-left: 300px; font-size: 25px; padding: 15px; font-weight: 100" >
+    <p>Web Push Notifications best way to engage users even if the user didn't open the application tab. Thanks to
+      service-workers! It display native system notifications to users using Notifications API.<br/><br/>
+      Application Server will not be able to send notifications. It sends the message through web push protocol to notifications browser push service and
+      then send the message to browser. Because browser wants to take the responsibility of user interface
+      engagement.<br/><br/>
+      Web push protocol requires Volunatary Application Server Identification(VAPID) for transmittign the
+      notfications securely. VAPID has public key to identify the application server uniquely by web push service
+      providers and private key used by application server to sign in the messages.
+    </p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
