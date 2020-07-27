@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
       console.log("response ===>", response.Countries)
       this.coronastats = response.Countries
       this.coronastats.forEach((stat: ICoronaStats, index, arr)=> {
-        let percentage: BigInteger = (stat.TotalRecovered / stat.TotalConfirmed) * 100  
+        let percentage: Number = (stat.TotalRecovered.valueOf() / stat.TotalConfirmed.valueOf()) * 100  
         console.log(stat.Country + "==" +  percentage +  "==" +  (percentage > 50));
         if (percentage > 50) {
           stat.isMedicalGood = true;
