@@ -1,0 +1,48 @@
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>{{ title }} </span>
+            <span class="example-spacer"></span>
+            <mat-icon  class="clickableicon mat-elevation-z3" aria-hidden="false" aria-label="Example refresh icon" (click)="this.fetchCoronaStats()">refresh</mat-icon>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+</header>
+<main>
+    <mat-table [dataSource]="coronastats" matSort matSortActive="created" matSortDisableClear matSortDirection="asc" class="mat-elevation-z8">
+        <ng-container matColumnDef="Country" >
+            <mat-header-cell *matHeaderCellDef >Country</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.Country}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="TotalConfirmed" >
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Total Confirmed</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.TotalConfirmed}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="NewConfirmed">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>New Confirmed</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.NewConfirmed}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="NewDeaths">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>New Deaths</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.NewDeaths}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="TotalDeaths">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Total Deaths</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.TotalDeaths}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="TotalRecovered">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Total Recovered</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.TotalRecovered}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="NewRecovered">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>New Recovered</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.NewRecovered}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let countrystats">{{countrystats.Date |  date:'yy-MM-dd h:mm a OOOO'}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns" [ngClass]="{'isgood': row.isMedicalGood }"></mat-row>
+    </mat-table>
+</main>
